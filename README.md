@@ -1,6 +1,6 @@
 # 2143-OOP-McGinn
 
---Dont forget to add a selfie--
+![alt text](https://github.com/dnmcginn57/2143-OOP-McGinn/blob/master/selfie.jpg?raw=true "selfie")
 
 David (Nick) McGinn
 
