@@ -1,3 +1,4 @@
+```python
 """
 
 Name: David McGinn
@@ -158,3 +159,5 @@ def rm(d, x):
   remove = [k for k, v in d.items() if v == x]
   for k in remove:
     del d[k]
+    
+```
