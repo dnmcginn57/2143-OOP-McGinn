@@ -1,3 +1,4 @@
+"""python
 """
 David McGinn
 2-15-17
@@ -374,6 +375,6 @@ while not G.isOver():
     G.play_game()
 G.winner()
 
-
+"""
 
 
