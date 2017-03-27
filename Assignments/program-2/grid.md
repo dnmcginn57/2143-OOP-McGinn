@@ -10,11 +10,7 @@ Grid display.
 Displays a rectangular grid of cells, organized in rows and columns
 with row 0 at the top and growing down, column 0 at the left and 
 growing to the right.  A sequence of unique colors for cells can 
-be chosen from a color wheel, in addition to colors 'black' and 'white'
-which do not appear in the color wheel. 
-Michal Young (michal@cs.uoregon.edu), October 2012, 
-for CIS 210 at University of Oregon.  Revised November 2013
-for Sudoku with subgrids. 
+be chosen from a color wheel
 Uses the simple graphics module provided by Zelle, which in turn 
 is built on the Tk graphics package (and which should therefore be 
 available on all major Python platforms, including Linux, Mac, and 
