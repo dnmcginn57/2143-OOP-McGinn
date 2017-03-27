@@ -25,8 +25,6 @@ import math
 import json
 from graphics import *    # Zelle's simple OO graphics
 
-#global win  # The window we are drawing the grid in
-#global cell_width, cell_height  # The size of a cell in the grid
 
 with open("colors.json") as file:
     newColors = file.read()
@@ -53,12 +51,10 @@ green = color_rgb(0,200,0)
 blue = color_rgb(0,0,200)
 grey = color_rgb(100,100,100)
 light_grey = color_rgb(200,200,200)
-global nrows
-nrows = 1
+
 
 class Grid():
     def __init__(self, rows, cols, width, height):
-        #global win, cell_width, cell_height, nrows
         self.win = GraphWin("Grid", width, height)
         self.win.setCoords(0, 0, rows, cols)
         self.bkgrnd = Rectangle(Point(0, 0), Point(width, height))
@@ -125,7 +121,6 @@ class Grid():
                 include grid.white, grid.black, and values returned by 
                 grid.get_next_color() and grid.get_cur_color()
         """
-        #global nrows, win
         left = col
         right = col + 1
         top = self.nrows - (row + 1)
@@ -148,7 +143,6 @@ class Grid():
             text: string (usually one character) to label the cell with
             color: Color of text label
         """
-        #global nrows, win
         xcenter = col + 0.5
         ycenter = self.nrows - (row + 1) + 0.5
         label = Text(Point(xcenter, ycenter), text)
@@ -166,7 +160,6 @@ class Grid():
         Returns: nothing
         Effects: Affects behavior of sub_label_cell
         """
-        #global n_sub_rows, n_sub_cols
         self.n_sub_rows = rows
         self.n_sub_cols = cols
 
@@ -180,7 +173,6 @@ class Grid():
             text: Label (usually one character) to place there
             color: color of text
         """
-        #global nrows, n_sub_rows, n_sub_cols, win
         xcenter = col + ((sub_col + 0.5) / self.n_sub_cols)
         ycenter = self.nrows - (row + 1) + ((sub_row + 0.5) / self.n_sub_rows)
         # print("Placing subgrid label at ({},{})".format(xcenter,ycenter))
@@ -198,7 +190,6 @@ class Grid():
         Returns: nothing
         Effect:  the grid graphics window is closed. 
         """
-        #global win
         self.win.close()
     
 if __name__ == "__main__":
