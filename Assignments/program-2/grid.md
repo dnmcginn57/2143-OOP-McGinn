@@ -1,4 +1,10 @@
-'''python
+```python
+"""
+David McGinn
+2143 OOP
+3-28-17
+"""
+
 """
 Grid display.  
 Displays a rectangular grid of cells, organized in rows and columns
@@ -220,4 +226,4 @@ if __name__ == "__main__":
 
 
 
-'''
+```
