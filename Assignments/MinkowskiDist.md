@@ -4,9 +4,9 @@ David McGinn
 
 from http://dataaspirant.com/2015/04/11/five-most-popular-similarity-measures-implementation-in-python/
 
-###H3 Minkowski Distance
+H3 Minkowski Distance
 
-####H4 Python Implementation
+H4 Python Implementation
 ```python
 from math import*
 from decimal import Decimal
@@ -23,7 +23,7 @@ def minkowski_distance(x,y,p_value):
 print minkowski_distance([0,3,4,5],[7,6,3,-1],3)
 ```
 
-####H4 Outputs
+H4 Outputs
 ```python
 8.373
 [Finished in 0.0s]
