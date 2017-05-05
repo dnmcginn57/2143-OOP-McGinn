@@ -49,17 +49,7 @@ def dirReduc(list):
         L.append(i)
 
     return L
-
-
-
-
-
-
-L = ["NORTH", "EAST", "WEST", "SOUTH", "WEST", "WEST"]
-
-newL = dirReduc(L)
-
-print newL
+    
 ```
 ### Question 2
 ### Question 3
