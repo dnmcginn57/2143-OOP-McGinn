@@ -131,5 +131,22 @@ def dupLetters(s):
   
 ```
 ### Question 5
+```python
+def consecutive(L):
+    """
+    @Method: consecutive
+    @Description:
+        Locates the first value in the array which is not consecutive
+    @Returns: the first inconsecutive value or none if there isn't one
+    """
+
+    for i in range(len(L) - 1):
+        #the check is not preformed for the first value
+        if i != 0:
+            if L[i] != L[i - 1] and L[i] != L[i-1] + 1:
+                return L[i]
+
+    return None
+```
 ### Question 6
 ### Question 7
