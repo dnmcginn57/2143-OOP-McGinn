@@ -105,6 +105,31 @@ def ChangeMaker(L):
 ```
 ### Question 3
 ### Question 4
+```python
+import string
+
+def dupLetters(s):
+  """
+  @Method: dupLetters
+  @Description: 
+    Method accepts a string of letters
+    This method is not case sensitive
+  @Returns: the number of letters which are repeated
+    NOT THE NUMBER OF TIMES THEY ARE REPEATED
+  """
+  
+  s = s.lower()
+  repeats = 0
+  
+  
+  for i in s:
+    if s.count(i) > 1:
+      repeats += 1
+      s = s.replace(i,"")
+  
+  return repeats
+  
+```
 ### Question 5
 ### Question 6
 ### Question 7
