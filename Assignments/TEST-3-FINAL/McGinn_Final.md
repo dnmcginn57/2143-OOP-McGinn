@@ -52,6 +52,57 @@ def dirReduc(list):
     
 ```
 ### Question 2
+```python
+def ChangeMaker(L):
+    """
+    @Method: ChangeMaker
+    @Description:
+        Accepts a list of intergers which may be 100, 50, or 25
+        in any order
+    @Returns: "YES" if cashier can give everyone in line change "NO" otherwise
+    """
+
+    #tracks the bills in the drawer
+    drawer = []
+
+    for i in L:
+
+        #if the customer has exact change it is added to the drawer
+        if i == 25:
+            drawer.append(i)
+
+        #if the customer pays with a 50
+            #check to see if there is a 25 in the drawer to make change with
+            #if there is the 25 is changed for the 50
+        elif i == 50:
+            if drawer.count(25) == 0:
+                return "NO"
+            else:
+                drawer.remove(25)
+                drawer.append(50)
+
+        #if the customer pays with a 100
+            #check to see if there is at least one 50 and one 25 or 3 25's
+            #if there is they are changed for the 100
+        elif i == 100:
+            if drawer.count(50) == 0 and drawer.count(25) < 3:
+                return "NO"
+            elif drawer.count(50) > 0 and drawer.count(25) == 0:
+                return "NO"
+            else:
+                if drawer.count(50) > 0:
+                    drawer.append(i)
+                    drawer.remove(50)
+                    drawer.remove(25)
+                else:
+                    drawer.append(i)
+                    drawer.remove(25)
+                    drawer.remove(25)
+                    drawer.remove(25)
+
+    #finally if all tests are passed the method returns "YES"
+    return "YES"
+```
 ### Question 3
 ### Question 4
 ### Question 5
