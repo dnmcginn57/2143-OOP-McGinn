@@ -104,6 +104,54 @@ def ChangeMaker(L):
     return "YES"
 ```
 ### Question 3
+```python
+class Point(object):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return "[%d,%d]" % (self.x, self.y)
+
+class Shape(object):
+    def __init__(self, p1, p2):
+        self.p1 = p1
+        self.p2 = p2
+
+    def area(self):
+        pass
+
+class Square(Shape):
+    def __init__(self, s1, p1 = None, p2 = None):
+        super().__init__(p1, p2)
+        self.s1 = s1
+
+    def perimeter(self):
+        return self.s1*4
+
+    def area(self):
+        return self.s1**2
+
+class Rectangle(Shape):
+    def __init__(self, s1, s2, p1 = None, p2 = None):
+        super().__init__(p1, p2)
+        self.s1 = s1
+        self.s2 = s2
+
+    def area(self):
+        return self.s1 * self.s2
+
+class Cube(Square):
+    def __init__(self, s1):
+        super().__init__(s1)
+
+    def area(self):
+        return self.s1**3
+
+    def surfaceArea(self):
+        face = super().area()
+        return face*6
+```
 ### Question 4
 ```python
 def dupLetters(s):
