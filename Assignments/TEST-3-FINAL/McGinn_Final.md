@@ -147,4 +147,40 @@ def consecutive(L):
     return None
 ```
 ### Question 6
+```python
+class Person(object):
+    def __init__(self, firstname, lastname):
+        self.firstname = firstname
+        self.lastname = lastname
+
+    def get_name(self):
+        return '%s %s' % (self.firstname, self.lastname)
+
+
+class Parent(Person):
+    """
+    @Class: Parent
+    @Methods:
+        __init__: accepts a first and last name and initilizes an empty list to hold
+            its children
+        birth: accepts a child and adds it to the list of children
+    """
+    def __init__(self, first, last):
+        super().__init__(first, last)
+        self.children = []
+
+    def birth(self, child):
+        self.children.append(child)
+
+class Child(Person):
+    """
+    @Class: Child, inherits person
+    @Methods:
+        __init__: accepts a first and last name as well as a parent
+    """
+
+    def __init__(self, first, last, parent):
+        super().__init__(first, last)
+        self.parent = parent
+```
 ### Question 7
