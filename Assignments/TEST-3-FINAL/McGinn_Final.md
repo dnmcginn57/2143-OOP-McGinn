@@ -254,3 +254,183 @@ class Child(Person):
         self.parent = parent
 ```
 ### Question 7
+```python
+import random
+
+class Wheel(object):
+    """
+    @Class: Wheel
+    @Description:
+        Represents a roulette wheel
+    @Methods:
+        spin
+    """
+
+    def __init__(self):
+        """
+        @Method: __init__
+        @Description:
+            sets up the wheel, accepts no parameters. populates a list for each color
+            the value 37 represents 00 since 00 is just 0
+        """
+        self.green = [0, 37]
+        self.red = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]
+        self.black = []
+        for i in range(36):
+            if not i in self.red:
+                self.black.append(i)
+        self.black.pop(0)
+
+    def spin(self):
+        """
+        @Method: spin
+        @Description:
+            Accepts no parameters, determines where the ball lands after
+            a spin
+        @Returns: a dictionary representing the ball's location
+        """
+        land = random.randint(1, 37)
+        d = {}
+        if land in self.red:
+            d['number'] = land
+            d['color'] = 'red'
+        elif land in self.black:
+            d['number'] = land
+            d['color'] = 'black'
+        else:
+            #the chance of landing on green isn't changed but 00 is the same as 0
+            if land == 37:
+                land = 0
+                d['number'] = land
+                d['color'] = 'green'
+        return d
+
+class Table(object):
+    """
+    @Class: Table
+    @Description: Represents a roulette table
+    @Methods:
+        checkAdj
+        getPayout
+    """
+    def __init__(self):
+        """
+        @Method: __init__
+        @Description:
+            would initialize with a dictionary holding every type of bet and its payout
+            as a factor by which to multiply the player's bet
+        """
+        #for example,
+        self.bets = {'Even': 2, 'Single': 35}
+        #and so on
+
+    def checkAdj(self, n):
+        """
+        @Method: checkAdj
+        @Description:
+            This method would accept a list of numbers
+            it would then check to see if the numbers in that
+            list would be adjacent on a roulette table
+            a list is used since a player can bet on anywhere from
+            2 to 4 numbers that are adjacent
+        @Returns:
+            True if numbers are adjacent
+            False if they are not
+        """
+        pass
+
+    def getPayout(self, btype):
+        """
+        @Method: getPayout
+        @Description:
+            accepts as a string a type of bet.
+            searches the bets dictionary for that type of bet
+        @Returns:
+            the factor by which to multiply the winning player's money
+        """
+        pass
+
+class Player():
+    """
+    @Class: Player
+    @Description: Represents a player of roulette
+    @Methods:
+        placeBet
+        payout
+    """
+    def __init__(self, name, bank):
+        self.name = name
+        self.total_bank = bank
+        self.current_bet_amount = 0
+        self.current_bet = None
+
+    def placeBet(self, amt, bet):
+        """
+        @Method: placeBet
+        @Description:
+            This accepts an amount of money and a bet.
+            the amount of money is subtracted from the player's bank
+            and current_bet_amount is set to this amount.
+            current_bet is set to what the player places a bet on
+        @Returns: this method returns nothing probably
+        """
+        pass
+
+    def payout(self, winnings):
+        """
+        @Method: payout
+        @Description:
+            in the event the player wins the bet, their winnings(calculated externally)
+            are added to their total bank
+        """
+        pass
+
+class Game(object):
+    """
+    @Class: Game
+    @Description:
+        contains all objects for a roulette game
+        and manages said game
+    @Methods:
+        playGame
+    """
+    def __init__(self, players):
+        """
+        @Method: __init__
+        @Description:
+            accepts a list of players
+            initializes a table object and a wheel object
+        """
+        self.players = players
+        self.table = Table()
+        self.wheel = Wheel()
+
+    def playGame(self):
+        """
+        @Method: playGame
+        @Description:
+            This method is responsible for running the game
+            keeps track of players, their bets, and bet ammounts
+            responsible for checking if anyone won and pays them the
+            appropriate ammount if they did
+        """
+        result = self.wheel.spin()
+        return result
+
+    def bustOut(self, p):
+        """
+        @Method: BustOut
+        @Description:
+            this method would remove a player from the game
+            when said player runs out of money
+        """
+        self.players.remove(p)
+
+
+p = Player('Phill', 1000)
+players = [p]
+
+g = Game(players)
+print(g.playGame())
+
+```
