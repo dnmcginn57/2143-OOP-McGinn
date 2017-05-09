@@ -414,8 +414,10 @@ class Game(object):
             responsible for checking if anyone won and pays them the
             appropriate ammount if they did
         """
+        #everyone places a bet
         result = self.wheel.spin()
-        return result
+        #check if anyone wins
+        #pays winners
 
     def bustOut(self, p):
         """
@@ -425,12 +427,5 @@ class Game(object):
             when said player runs out of money
         """
         self.players.remove(p)
-
-
-p = Player('Phill', 1000)
-players = [p]
-
-g = Game(players)
-print(g.playGame())
 
 ```
