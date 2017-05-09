@@ -1,4 +1,6 @@
-# I AM STILL WORKING ON THIS PLEASE DON'T GRADE IT YET
++ David McGinn
++ 2143-OOP
++ due: 5-10-17
 
 ### Question 1
 ```python
