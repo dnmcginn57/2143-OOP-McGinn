@@ -271,7 +271,7 @@ class Wheel(object):
         @Method: __init__
         @Description:
             sets up the wheel, accepts no parameters. populates a list for each color
-            the value 37 represents 00 since 00 is just 0
+            the value 37 represents 00 since 00 is just 0 but we need 2 distinct values that mean 0
         """
         self.green = [0, 37]
         self.red = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]
